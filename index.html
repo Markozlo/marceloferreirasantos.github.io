@@ -1,128 +1,255 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo – Marcelo Ferreira Santos</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marcelo Ferreira Santos – Engenheiro de Controle</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --bg: #f4f4f4;
+            --card: #ffffff;
+            --text: #333;
+            --primary: #1a73e8;
+        }
+
+        [data-theme="dark"] {
+            --bg: #1a1a1a;
+            --card: #242424;
+            --text: #e0e0e0;
+            --primary: #4c8dff;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background: #f4f4f4;
-            color: #333;
+            font-family: "Inter", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
         }
-        header {
-            background: #1a73e8;
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        section {
-            background: white;
-            max-width: 900px;
-            margin: 20px auto;
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: var(--card);
+            height: 100vh;
+            position: fixed;
+            border-right: 1px solid #ccc;
             padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+
+            .sidebar h2 {
+                margin-top: 0;
+                color: var(--primary);
+                font-size: 22px;
+            }
+
+            .sidebar a {
+                display: block;
+                padding: 12px 0;
+                color: var(--text);
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 15px;
+            }
+
+                .sidebar a:hover {
+                    color: var(--primary);
+                }
+
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 20px auto;
+            border: 4px solid var(--primary);
+        }
+
+        /* Conteúdo */
+        .content {
+            margin-left: 300px;
+            padding: 35px;
+            max-width: 900px;
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
         h2 {
-            border-left: 5px solid #1a73e8;
+            color: var(--primary);
+            border-left: 5px solid var(--primary);
             padding-left: 10px;
         }
-        ul { line-height: 1.7; }
-        .footer {
-            text-align: center;
+
+        .card {
+            background: var(--card);
             padding: 20px;
-            background: #1a73e8;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.08);
+        }
+
+        ul {
+            line-height: 1.7;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: var(--primary);
             color: white;
-            margin-top: 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+
+            .download-btn:hover {
+                opacity: 0.8;
+            }
+
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-bottom: 1px solid #ccc;
+            }
+
+            .content {
+                margin-left: 0;
+            }
         }
     </style>
+
+    <script>
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
+    </script>
 </head>
+
 <body>
 
-<header>
-    <h1>Marcelo Ferreira Santos</h1>
-    <p>Engenheiro de Controle • Programador PLC • Automação Industrial</p>
-    <p><strong>Email:</strong> marcelo.fersan@hotmail.com | <strong>Tel:</strong> +55 11 96534-8392</p>
-</header>
+    <!-- MENU LATERAL -->
+    <div class="sidebar">
+        <img src="foto-marcelo.jpg" alt="Foto Marcelo" class="profile-photo">
 
-<section>
-    <h2>Dados Pessoais</h2>
-    <ul>
-        <li>Brasileiro, casado, 42 anos</li>
-        <li>3 filhos</li>
-    </ul>
-</section>
+        <h2>Menu</h2>
+        <a href="#dados">Dados Pessoais</a>
+        <a href="#formacao">Formação</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#idiomas">Idiomas</a>
+    </div>
 
-<section>
-    <h2>Formação Acadêmica</h2>
-    <ul>
-        <li>Pós-graduação em Engenharia de Software – Estácio (2023)</li>
-        <li>Tecnologia em Automação Industrial – FATEC-SBC (2014)</li>
-        <li>Técnico em Eletrotécnica – ETE Basilides de Godoy (2001)</li>
-    </ul>
-</section>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="content">
 
-<section>
-    <h2>Atuação Profissional</h2>
-    <h3>Freelancer – Engenheiro de Controle / Programador (2016 – atual)</h3>
-    <ul>
-        <li>Atualização e revisão de linhas de produção</li>
-        <li>Programação de CLPs, IHMs, SCADA e comissionamento</li>
-    </ul>
+        <h1>Marcelo Ferreira Santos</h1>
+        <p class="subtitle">Engenheiro de Controle • Programador PLC • Automação Industrial</p>
+        <p>Email: <strong>marcelo.fersan@hotmail.com</strong> • Tel: <strong>+55 11 96534-8392</strong></p>
 
-    <h3>MCK Automação (2014–2016) – Programador</h3>
-    <ul>
-        <li>Projetos de automação e suporte técnico</li>
-        <li>Comissionamento de sistemas industriais</li>
-    </ul>
+        <a class="download-btn" href="Curriculo_Marcelo_Lattes.pdf" download>📄 Baixar Currículo em PDF</a>
 
-    <h3>Schioppa Metalúrgica (2011–2014) – Técnico Mecatrônico</h3>
-    <ul>
-        <li>Integração de redes industriais e instrumentação</li>
-        <li>Desenvolvimento de supervisão e controle</li>
-    </ul>
-</section>
+        <!-- DADOS -->
+        <div class="card" id="dados">
+            <h2>Dados Pessoais</h2>
+            <ul>
+                <li>Brasileiro, casado, 42 anos</li>
+                <li>3 filhos</li>
+            </ul>
+        </div>
 
-<section>
-    <h2>Principais Projetos</h2>
-    <ul>
-        <li>Coca-Cola / KHS – Turquia (2025): Comissionamento linha 90.000 latas/h</li>
-        <li>Itaesbra – Brasil (2025): Atualização linha de solda ponto</li>
-        <li>Walmart / Symbotic – EUA (2024): Paletização e automação logística</li>
-        <li>Stellantis – Canadá/México (2023): Linhas de solda e selagem</li>
-        <li>Flex-N-Gate / Ford Bronco – EUA (2022): Comissionamento linha solda</li>
-        <li>GM / KUKA – EUA (2022): Comissionamento de linha de solda</li>
-        <li>Tesla – EUA (2019): Integração de células robóticas</li>
-        <li>La Galvanina – Itália (2018): Startup linha de envase 350ml</li>
-    </ul>
-</section>
+        <!-- FORMAÇÃO -->
+        <div class="card" id="formacao">
+            <h2>Formação Acadêmica</h2>
+            <ul>
+                <li>Pós-graduação em Engenharia de Software – Estácio (2023)</li>
+                <li>Automação Industrial – FATEC-SBC (2014)</li>
+                <li>Técnico em Eletrotécnica – ETE Basilides de Godoy (2001)</li>
+            </ul>
+        </div>
 
-<section>
-    <h2>Habilidades Técnicas</h2>
-    <ul>
-        <li><strong>Automação:</strong> RSLogix, FactoryTalk, Step7, TIA Portal, WinCC, InTouch, iFix</li>
-        <li><strong>Redes Industriais:</strong> PROFINET, PROFIBUS, Ethernet/IP, Modbus, DeviceNet</li>
-        <li><strong>Programação:</strong> C#, C++, Java, VB, JavaScript, SQL</li>
-        <li><strong>Desenho Técnico:</strong> AutoCAD, EPLAN, MicroStation</li>
-        <li><strong>Cloud/Virtualização:</strong> Azure, AWS, Hyper-V, vSphere</li>
-    </ul>
-</section>
+        <!-- EXPERIÊNCIA -->
+        <div class="card" id="experiencia">
+            <h2>Experiência Profissional</h2>
 
-<section>
-    <h2>Idiomas</h2>
-    <ul>
-        <li>Português – Nativo</li>
-        <li>Inglês – Avançado</li>
-        <li>Espanhol – Avançado</li>
-    </ul>
-</section>
+            <h3>Freelancer – Engenheiro de Controle / Programador (2016 – atual)</h3>
+            <ul>
+                <li>Revisão e atualização de linhas de produção</li>
+                <li>Programação PLC, HMI, SCADA</li>
+                <li>Testes, integração e comissionamento</li>
+            </ul>
 
-<div class="footer">
-    Página criada para apresentação profissional – GitHub Pages
-</div>
+            <h3>MCK Automação (2014–2016)</h3>
+            <ul>
+                <li>Desenvolvimento de projetos industriais</li>
+                <li>Comissionamento de sistemas e suporte</li>
+            </ul>
+
+            <h3>Schioppa Metalúrgica (2011–2014)</h3>
+            <ul>
+                <li>Integração de redes industriais</li>
+                <li>Desenvolvimento de supervisão e controle</li>
+            </ul>
+        </div>
+
+        <!-- PROJETOS -->
+        <div class="card" id="projetos">
+            <h2>Principais Projetos</h2>
+            <ul>
+                <li>Coca-Cola / KHS – Turquia (2025)</li>
+                <li>Itaesbra – Brasil (2025)</li>
+                <li>Walmart / Symbotic – EUA (2024)</li>
+                <li>Stellantis – Canadá/México (2023)</li>
+                <li>Ford Bronco – EUA (2022)</li>
+                <li>GM / KUKA – EUA (2022)</li>
+                <li>Tesla – EUA (2019)</li>
+                <li>La Galvanina – Itália (2018)</li>
+            </ul>
+        </div>
+
+        <!-- HABILIDADES -->
+        <div class="card" id="habilidades">
+            <h2>Habilidades Técnicas</h2>
+            <ul>
+                <li>RSLogix, FactoryTalk, Step7, TIA Portal</li>
+                <li>Ethernet/IP, PROFINET, PROFIBUS, Modbus</li>
+                <li>C#, C++, Java, SQL</li>
+                <li>AutoCAD, EPLAN</li>
+                <li>Azure, AWS, Hyper-V</li>
+            </ul>
+        </div>
+
+        <!-- IDIOMAS -->
+        <div class="card" id="idiomas">
+            <h2>Idiomas</h2>
+            <ul>
+                <li>Português – Nativo</li>
+                <li>Inglês – Avançado</li>
+                <li>Espanhol – Avançado</li>
+            </ul>
+        </div>
+
+    </div>
 
 </body>
 </html>
