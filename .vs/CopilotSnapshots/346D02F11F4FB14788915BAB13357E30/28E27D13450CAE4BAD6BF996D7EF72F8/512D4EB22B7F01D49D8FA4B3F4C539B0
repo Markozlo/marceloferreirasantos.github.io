@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8" />
@@ -69,13 +69,12 @@
             border: 4px solid var(--primary);
         }
 
-        /* Language switcher (horizontal flags) */
+        /* Language switcher (vertical flags) */
         .lang-switcher {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
+            gap: 8px;
             margin-bottom: 12px;
         }
 
@@ -173,9 +172,9 @@
     <div class="sidebar">
 
         <div class="lang-switcher" aria-label="language switcher">
-            <a class="flag" href="index.html" title="Português">BR</a>
-            <a class="flag" href="index.en.html" title="English">US</a>
-            <a class="flag" href="index.es.html" title="Español">ES</a>
+            <a class="flag" href="index.html" title="Português">🇧🇷</a>
+            <a class="flag" href="index_en.html" title="English">🇺🇸</a>
+            <a class="flag" href="index.es.html" title="Español">🇪🇸</a>
         </div>
 
         <img src="foto-marcelo.jpg" alt="Foto Marcelo" class="profile-photo">

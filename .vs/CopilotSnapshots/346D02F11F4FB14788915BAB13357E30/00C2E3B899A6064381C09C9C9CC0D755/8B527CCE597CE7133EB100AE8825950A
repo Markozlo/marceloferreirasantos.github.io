@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8" />
@@ -67,28 +67,6 @@
             display: block;
             margin: 20px auto;
             border: 4px solid var(--primary);
-        }
-
-        /* Language switcher (horizontal flags) */
-        .lang-switcher {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-
-        .lang-switcher .flag {
-            font-size: 26px;
-            line-height: 1;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .lang-switcher .flag:focus,
-        .lang-switcher .flag:hover {
-            transform: translateY(-2px);
         }
 
         /* Conteúdo */
@@ -172,10 +150,10 @@
     <!-- MENU LATERAL -->
     <div class="sidebar">
 
-        <div class="lang-switcher" aria-label="language switcher">
-            <a class="flag" href="index.html" title="Português">BR</a>
-            <a class="flag" href="index.en.html" title="English">US</a>
-            <a class="flag" href="index.es.html" title="Español">ES</a>
+        <div style="text-align:center; margin-top:8px; font-weight:600;">
+            <a href="index.html" style="margin-right:8px;">PT</a>
+            <a href="index.en.html" style="margin-right:8px;">EN</a>
+            <a href="index.es.html">ES</a>
         </div>
 
         <img src="foto-marcelo.jpg" alt="Foto Marcelo" class="profile-photo">
